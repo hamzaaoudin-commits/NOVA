@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candidater — GENÈSE | Strawberry Production</title>
+<meta name="description" content="Candidatez pour le parcours GENÈSE. Un accompagnement premium, sélectif, pour transformer une idée en entreprise prête à être lancée.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">GEN<em>È</em>SE</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="offre.html">L'offre</a></li>
+      <li><a href="parcours.html">Le parcours</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Candidater</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <h1>Faire <em>naître</em><br>votre entreprise</h1>
+    <p>GENÈSE est un accompagnement premium, à capacité limitée. Chaque candidature est étudiée individuellement.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="label">Avant de candidater</div>
+    <div class="target">
+      <div class="target-card no">
+        <div class="tag">Ce n'est pas pour vous si</div>
+        <p>Votre entreprise est déjà lancée et tourne — c'est l'offre Strawberry classique qu'il vous faut, pas GENÈSE.</p>
+      </div>
+      <div class="target-card yes">
+        <div class="tag">C'est pour vous si</div>
+        <p>Vous avez une idée claire en tête, rien n'est encore lancé, et vous voulez un seul interlocuteur du premier brief au plan de lancement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Candidature</div>
+    <h2>Parlez-nous de votre idée.</h2>
+    <p class="lead">Ce formulaire n'engage à rien. Il sert à vérifier que GENÈSE est le bon format pour votre projet avant un premier échange.</p>
+
+    <form class="form" name="genese-candidature" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="genese-candidature">
+
+      <div class="field">
+        <label for="nom">Nom & prénom</label>
+        <input type="text" id="nom" name="nom" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="field">
+        <label for="stade">Où en est votre idée aujourd'hui ?</label>
+        <select id="stade" name="stade" required>
+          <option value="">Sélectionner...</option>
+          <option value="idee">Encore dans ma tête, rien d'écrit</option>
+          <option value="brouillon">Quelques notes / un brouillon d'offre</option>
+          <option value="avance">Idée avancée, business model presque clair</option>
+          <option value="lance">Déjà lancé (GENÈSE n'est probablement pas adapté)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="projet">Décrivez votre projet en quelques lignes</label>
+        <textarea id="projet" name="projet" required></textarea>
+      </div>
+
+      <div class="field">
+        <label for="delai">Horizon de lancement souhaité</label>
+        <input type="text" id="delai" name="delai" placeholder="Ex. dans 2 mois, pas de date fixe...">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Envoyer ma candidature</button>
+    </form>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="label">Ou directement</div>
+    <p class="lead">Vous préférez écrire directement ? <a href="mailto:contact@strawberryproduction.fr" style="text-decoration:underline; color:var(--moss);">contact@strawberryproduction.fr</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="label">Strawberry Production</div>
+    <p class="quote">On ne te livre pas une marque. On fait naître l'entreprise avec toi.</p>
+    <div class="footer-grid">
+      <div class="sign">Brand Narrative Architecture — Paris</div>
+      <ul class="footer-nav">
+        <li><a href="offre.html">L'offre</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GENÈSE — De l'idée à l'entreprise | Strawberry Production</title>
+<meta name="description" content="GENÈSE : l'accompagnement de bout en bout qui transforme une idée en entreprise — nom, positionnement, identité, site et plan de lancement à 90 jours.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">GEN<em>È</em>SE</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="offre.html">L'offre</a></li>
+      <li><a href="parcours.html">Le parcours</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Candidater</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-seed" id="seed"></div>
+  <div class="wrap">
+    <div class="eyebrow">Strawberry Production — Offre premium</div>
+    <h1 class="title">GEN<em>È</em>SE</h1>
+    <p class="subtitle">L'accompagnement de bout en bout, de l'idée au branding complet.</p>
+    <p class="manifesto">« On ne te livre pas une marque.<br>On fait naître l'entreprise avec toi. »</p>
+    <div class="hero-actions">
+      <a href="offre.html" class="btn btn-primary">Découvrir l'offre</a>
+      <a href="contact.html" class="btn btn-ghost">Candidater</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="label">Le concept</div>
+    <h2>Ni un audit, ni un produit ponctuel.<br>Un parcours.</h2>
+    <p class="lead">GENÈSE prend quelqu'un de « j'ai une idée d'entreprise en tête » jusqu'à « j'ai un nom, un positionnement, une identité, un site, et un plan de lancement ». C'est la fusion de trois savoir-faire en un seul fil narratif.</p>
+
+    <div class="fusion">
+      <div class="fusion-cell">
+        <div class="num">BLOC 01</div>
+        <h3>Narratif</h3>
+        <p>Hérité de Strawberry — storytelling, ton de marque, positionnement.</p>
+      </div>
+      <div class="fusion-cell">
+        <div class="num">BLOC 02</div>
+        <h3>Présence</h3>
+        <p>Hérité d'Écrin — vitrine web, expérience digitale.</p>
+      </div>
+      <div class="fusion-cell">
+        <div class="num">BLOC 03</div>
+        <h3>Structuration</h3>
+        <p>Nouveau bloc — offre, business model, premiers pas concrets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Positionnement</div>
+    <h2>Pour qui ce parcours existe — et pour qui non.</h2>
+    <div class="target">
+      <div class="target-card no">
+        <div class="tag">Ce n'est pas pour</div>
+        <p>Le fondateur qui a déjà une boîte qui tourne. Lui, c'est Strawberry.</p>
+      </div>
+      <div class="target-card yes">
+        <div class="tag">C'est pour</div>
+        <p>Celui qui a encore l'idée en tête, pas encore lancée — et qui aurait sinon dépensé 6 mois et 3 à 4 prestataires différents pour arriver au même point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="label">En une phrase</div>
+    <p class="quote">GENÈSE transforme une idée encore floue en une entreprise prête à être lancée — nom, positionnement, identité, site et plan d'action — en un seul parcours, avec une seule personne aux commandes.</p>
+    <div class="hero-actions" style="margin-top:44px;">
+      <a href="parcours.html" class="btn btn-primary">Voir le parcours en détail</a>
+      <a href="tarifs.html" class="btn btn-ghost">Voir les tarifs</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="label">Strawberry Production</div>
+    <p class="quote">Aucun de nos concurrents ne couvre tout ce spectre d'une seule main.</p>
+    <div class="footer-grid">
+      <div class="sign">Brand Narrative Architecture — Paris</div>
+      <ul class="footer-nav">
+        <li><a href="offre.html">L'offre</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const seed = document.getElementById('seed');
+  const sizes = [80, 180, 320, 520, 760];
+  sizes.forEach((s, i) => {
+    const ring = document.createElement('div');
+    ring.className = 'ring';
+    ring.style.width = s + 'px';
+    ring.style.height = s + 'px';
+    ring.style.animationDelay = (i * 0.12) + 's';
+    seed.appendChild(ring);
+  });
+</script>
+
+</body>
+</html>
