@@ -1,11 +1,11 @@
-# GENÈSE — Application payante pas-à-pas
+# NOVA — Application payante pas-à-pas
 
-Site vitrine + application de production statique (HTML/CSS/JS vanilla) présentant et livrant l'offre GENÈSE de Strawberry Production : un accompagnement en 5 étapes, payé une fois, pour transformer une idée en entreprise lancée.
+Site vitrine + application de production statique (HTML/CSS/JS vanilla) présentant et livrant l'offre NOVA de Strawberry Production : un accompagnement en 5 étapes, payé une fois, pour transformer une idée en entreprise lancée.
 
 ## Structure
 
 ```
-genese/
+nova/
 ├── index.html       → Accueil
 ├── offre.html       → Détail de l'offre
 ├── parcours.html     → Les 5 étapes
@@ -47,7 +47,7 @@ Remplace `REMPLACE-PAR-TON-DOMAINE.fr` dans `robots.txt` et `sitemap.xml` une fo
 
 ```bash
 npm i -g vercel
-cd genese
+cd nova
 vercel
 ```
 Framework Preset : **Other** (site statique). Vercel détecte automatiquement.

@@ -64,6 +64,18 @@ a{color:inherit;}
   opacity:1;
   border-bottom-color:var(--gold);
 }
+.nav-right{display:flex; align-items:center; gap:18px;}
+.lang-toggle{
+  display:flex; gap:2px; align-items:center;
+  font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.06em;
+}
+.lang-toggle button{
+  background:none; border:none; cursor:pointer; padding:2px 4px;
+  font-family:inherit; font-size:inherit; letter-spacing:inherit;
+  color:var(--ink); opacity:.4; text-transform:uppercase;
+}
+.lang-toggle button.active{opacity:1; color:var(--moss);}
+.lang-toggle .sep{opacity:.3;}
 .nav-cta{
   font-family:'Space Mono', monospace;
   font-size:12px;
@@ -231,8 +243,15 @@ p.lead{font-size:19px; max-width:640px; color:#2c2e35;}
   font-family:'Space Mono', monospace; font-size:13px; z-index:1;
 }
 .step-dot.final{background:var(--moss); border-color:var(--moss); color:var(--bone);}
+.step-num-label{font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--moss); margin-bottom:6px;}
 .step-body h4{font-family:'Fraunces', serif; font-weight:600; font-size:21px; margin-bottom:8px;}
 .step-body p{font-size:16px; color:#3a3d44; max-width:560px;}
+.step-role{
+  margin-top:16px; padding:14px 18px; max-width:560px;
+  border-left:2px solid var(--gold); background:rgba(176,138,62,0.06);
+}
+.step-role .role-tag{font-family:'Space Mono', monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:6px;}
+.step-role p{font-size:15px; color:#3a3d44; font-style:italic; margin:0;}
 .weeks{margin-top:36px; font-family:'Space Mono', monospace; font-size:13px; color:var(--moss); letter-spacing:.05em;}
 
 /* ---------- PRICE ---------- */

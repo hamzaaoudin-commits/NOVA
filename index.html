@@ -3,70 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GENÈSE — L'application pas-à-pas pour lancer votre entreprise | Strawberry Production</title>
-<meta name="description" content="GENÈSE : l'application qui vous fait avancer pas à pas, avec vous, de l'idée à l'entreprise — nom, positionnement, identité, site et plan de lancement à 90 jours.">
+<title>NOVA — L'application pas-à-pas pour lancer votre entreprise | Strawberry Production</title>
+<meta name="description" content="NOVA : l'application qui vous fait avancer, étape par étape, de l'idée à l'entreprise. Le fondateur garde la main à chaque étape.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="GENÈSE — L'application pas-à-pas pour lancer votre entreprise">
-<meta property="og:description" content="GENÈSE : l'application qui vous fait avancer pas à pas, avec vous, de l'idée à l'entreprise.">
+<meta property="og:title" content="NOVA — L'application pas-à-pas pour lancer votre entreprise | Strawberry Production">
+<meta property="og:description" content="NOVA : l'application qui vous fait avancer, étape par étape, de l'idée à l'entreprise. Le fondateur garde la main à chaque étape.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-
-<nav class="nav">
+<body><nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">GEN<em>È</em>SE</a>
+    <a href="index.html" class="nav-logo">NOVA</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Accueil</a></li>
-      <li><a href="offre.html">L'offre</a></li>
-      <li><a href="parcours.html">Le parcours</a></li>
-      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="index.html" class="active" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
+      <li><a href="parcours.html" data-i18n="nav.journey">Le parcours</a></li>
+      <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
     </ul>
-    <a href="app.html" class="nav-cta">Commencer</a>
-  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-<div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button><a href="index.html" class="active">Accueil</a><a href="offre.html">L'offre</a><a href="parcours.html">Le parcours</a><a href="tarifs.html">Tarifs</a><a href="app.html">Commencer</a></div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button data-lang="fr">FR</button><span class="sep">/</span><button data-lang="en">EN</button>
+      </div>
+      <a href="app.html" class="nav-cta" data-i18n="nav.start">Commencer</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button>
+    <a href="index.html" data-i18n="nav.home">Accueil</a>
+    <a href="offre.html" data-i18n="nav.offer">L'offre</a>
+    <a href="parcours.html" data-i18n="nav.journey">Le parcours</a>
+    <a href="tarifs.html" data-i18n="nav.pricing">Tarif</a>
+    <a href="app.html" data-i18n="nav.start">Commencer</a>
+  </div>
 </nav>
-
 <header class="hero">
   <div class="hero-seed" id="seed"></div>
-  <div class="wrap">
-    <div class="eyebrow">Strawberry Production — Application payante</div>
-    <h1 class="title">GEN<em>È</em>SE</h1>
-    <p class="subtitle">L'application qui vous fait avancer pas à pas, de l'idée au branding complet.</p>
-    <p class="manifesto">« On ne te livre pas une marque.<br>On fait naître l'entreprise avec toi. »</p>
+  <div class="hero-inner">
+    <div class="eyebrow" data-i18n="index.eyebrow">Strawberry Production — Application payante</div>
+    <h1 class="title">NOVA</h1>
+    <p class="subtitle" data-i18n="index.subtitle">L'application qui vous fait avancer, étape par étape, de l'idée à l'entreprise lancée.</p>
+    <p class="manifesto" data-i18n="index.manifesto">« On ne vous livre pas une marque.<br>On la fait naître avec vous. »</p>
     <div class="hero-actions">
-      <a href="offre.html" class="btn btn-primary">Découvrir l'offre</a>
-      <a href="app.html" class="btn btn-ghost">Commencer mon parcours</a>
+      <a href="offre.html" class="btn btn-primary" data-i18n="index.cta.discover">Découvrir l'offre</a>
+      <a href="app.html" class="btn btn-ghost" data-i18n="index.cta.start">Commencer mon parcours</a>
     </div>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <div class="label">Le concept</div>
-    <h2>Ni un audit, ni un produit ponctuel.<br>Une application, pas à pas.</h2>
-    <p class="lead">GENÈSE prend quelqu'un de « j'ai une idée d'entreprise en tête » jusqu'à « j'ai un nom, un positionnement, une identité, un site, et un plan de lancement » — à travers 5 étapes que vous débloquez et complétez vous-même, dans l'application, à votre rythme. C'est la fusion de trois savoir-faire en un seul fil narratif, transformée en outil de travail.</p>
+    <div class="label" data-i18n="index.concept.label">Le concept</div>
+    <h2 data-i18n="index.concept.h2">Ni un audit, ni un produit livré clé en main.<br>Une application, et vous aux commandes.</h2>
+    <p class="lead" data-i18n="index.concept.lead">NOVA prend une idée encore floue et la conduit jusqu'à une entreprise prête à exister.</p>
+  </div>
+</section>
 
-    <div class="fusion">
-      <div class="fusion-cell">
-        <div class="num">BLOC 01</div>
-        <h3>Narratif</h3>
-        <p>Hérité de Strawberry — storytelling, ton de marque, positionnement.</p>
+<section>
+  <div class="wrap">
+    <div class="label" data-i18n="index.why.label">Pourquoi ça marche</div>
+    <div class="why-grid">
+      <div>
+        <div class="n" data-i18n="index.why.01.t">Vous restez le fondateur</div>
+        <p data-i18n="index.why.01.p">L'application ne décide rien à votre place.</p>
       </div>
-      <div class="fusion-cell">
-        <div class="num">BLOC 02</div>
-        <h3>Présence</h3>
-        <p>Hérité d'Écrin — vitrine web, expérience digitale.</p>
+      <div>
+        <div class="n" data-i18n="index.why.02.t">Un seul fil, pas dix prestataires</div>
+        <p data-i18n="index.why.02.p">Tout est coordonné dans un même outil cohérent.</p>
       </div>
-      <div class="fusion-cell">
-        <div class="num">BLOC 03</div>
-        <h3>Structuration</h3>
-        <p>Nouveau bloc — offre, business model, premiers pas concrets.</p>
+      <div>
+        <div class="n" data-i18n="index.why.03.t">Votre rythme, votre progression</div>
+        <p data-i18n="index.why.03.p">Un paiement unique, un accès sans date limite.</p>
       </div>
     </div>
   </div>
@@ -74,48 +84,31 @@
 
 <section>
   <div class="wrap">
-    <div class="label">Positionnement</div>
-    <h2>Pour qui ce parcours existe — et pour qui non.</h2>
-    <div class="target">
-      <div class="target-card no">
-        <div class="tag">Ce n'est pas pour</div>
-        <p>Le fondateur qui a déjà une boîte qui tourne. Lui, c'est Strawberry.</p>
-      </div>
-      <div class="target-card yes">
-        <div class="tag">C'est pour</div>
-        <p>Celui qui a encore l'idée en tête, pas encore lancée — et qui aurait sinon dépensé 6 mois et 3 à 4 prestataires différents pour arriver au même point.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-tight">
-  <div class="wrap">
-    <div class="label">En une phrase</div>
-    <p class="quote">GENÈSE transforme une idée encore floue en une entreprise prête à être lancée — nom, positionnement, identité, site et plan d'action — via une application pas-à-pas, un seul paiement, votre rythme.</p>
+    <div class="label" data-i18n="index.close.label">En une phrase</div>
+    <p class="quote" data-i18n="index.close.quote">NOVA transforme une idée floue en une entreprise prête à lancer.</p>
     <div class="hero-actions" style="margin-top:44px;">
-      <a href="parcours.html" class="btn btn-primary">Voir le parcours en détail</a>
-      <a href="tarifs.html" class="btn btn-ghost">Voir le tarif</a>
+      <a href="parcours.html" class="btn btn-primary" data-i18n="index.close.cta1">Voir le parcours en détail</a>
+      <a href="tarifs.html" class="btn btn-ghost" data-i18n="index.close.cta2">Voir le tarif</a>
     </div>
   </div>
 </section>
-
 <footer>
   <div class="wrap">
-    <div class="label">Strawberry Production</div>
-    <p class="quote">Aucun de nos concurrents ne couvre tout ce spectre d'une seule main.</p>
+    <div class="label" data-i18n="footer.house">Strawberry Production</div>
+    <p class="quote" data-i18n="footer.quote">On ne te livre pas une marque. On fait naître l'entreprise avec toi.</p>
     <div class="footer-grid">
-      <div class="sign">Brand Narrative Architecture — Paris</div>
+      <div class="sign" data-i18n="footer.sign">Architecture de marque — Paris</div>
       <ul class="footer-nav">
-        <li><a href="offre.html">L'offre</a></li>
-        <li><a href="parcours.html">Parcours</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
+        <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+        <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
   </div>
-</footer>
-
+</footer><script src="assets/config.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/nav.js"></script>
 <script>
   const seed = document.getElementById('seed');
   const sizes = [80, 180, 320, 520, 760];
@@ -128,8 +121,5 @@
     seed.appendChild(ring);
   });
 </script>
-
-<script src="assets/config.js"></script>
-<script src="assets/nav.js"></script>
 </body>
 </html>

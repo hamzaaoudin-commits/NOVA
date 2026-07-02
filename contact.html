@@ -3,86 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — GENÈSE | Strawberry Production</title>
-<meta name="description" content="Une question avant de commencer votre parcours GENÈSE ? Écrivez-nous. Pour démarrer directement, rendez-vous sur l'application.">
+<title>Contact — NOVA | Strawberry Production</title>
+<meta name="description" content="Une question avant de commencer votre parcours NOVA ? Écrivez-nous. Pour démarrer directement, rendez-vous sur l'application.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="Contact — GENÈSE">
-<meta property="og:description" content="Une question avant de commencer votre parcours GENÈSE ?">
+<meta property="og:title" content="Contact — NOVA | Strawberry Production">
+<meta property="og:description" content="Une question avant de commencer votre parcours NOVA ? Écrivez-nous. Pour démarrer directement, rendez-vous sur l'application.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-
-<nav class="nav">
+<body><nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">GEN<em>È</em>SE</a>
+    <a href="index.html" class="nav-logo">NOVA</a>
     <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="offre.html">L'offre</a></li>
-      <li><a href="parcours.html">Le parcours</a></li>
-      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
+      <li><a href="parcours.html" data-i18n="nav.journey">Le parcours</a></li>
+      <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
     </ul>
-    <a href="app.html" class="nav-cta">Commencer</a>
-  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-<div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button><a href="index.html">Accueil</a><a href="offre.html">L'offre</a><a href="parcours.html">Le parcours</a><a href="tarifs.html">Tarifs</a><a href="app.html">Commencer</a></div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button data-lang="fr">FR</button><span class="sep">/</span><button data-lang="en">EN</button>
+      </div>
+      <a href="app.html" class="nav-cta" data-i18n="nav.start">Commencer</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button>
+    <a href="index.html" data-i18n="nav.home">Accueil</a>
+    <a href="offre.html" data-i18n="nav.offer">L'offre</a>
+    <a href="parcours.html" data-i18n="nav.journey">Le parcours</a>
+    <a href="tarifs.html" data-i18n="nav.pricing">Tarif</a>
+    <a href="app.html" data-i18n="nav.start">Commencer</a>
+  </div>
 </nav>
-
 <header class="page-header">
   <div class="wrap">
-    <h1>Une <em>question</em><br>avant de commencer ?</h1>
-    <p>GENÈSE s'achète et se démarre directement dans l'application. Ce formulaire sert uniquement si vous avez besoin d'échanger avant.</p>
+    <h1 data-i18n="contact.h1">Une <em>question</em><br>avant de commencer ?</h1>
+    <p data-i18n="contact.sub">NOVA s'achète et se démarre directement dans l'application.</p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <div class="label">Pour vérifier que c'est pour vous</div>
+    <div class="label" data-i18n="contact.check.label">Pour vérifier que c'est pour vous</div>
     <div class="target">
       <div class="target-card no">
-        <div class="tag">Ce n'est pas pour vous si</div>
-        <p>Votre entreprise est déjà lancée et tourne — c'est l'offre Strawberry classique qu'il vous faut, pas GENÈSE.</p>
+        <div class="tag" data-i18n="contact.check.no.tag">Ce n'est pas pour vous si</div>
+        <p data-i18n="contact.check.no.p">Votre entreprise est déjà lancée et tourne.</p>
       </div>
       <div class="target-card yes">
-        <div class="tag">C'est pour vous si</div>
-        <p>Vous avez une idée claire en tête, rien n'est encore lancé, et vous voulez avancer vous-même, étape par étape, dans un outil qui structure le travail.</p>
+        <div class="tag" data-i18n="contact.check.yes.tag">C'est pour vous si</div>
+        <p data-i18n="contact.check.yes.p">Vous avez une idée claire et voulez avancer vous-même, étape par étape.</p>
       </div>
     </div>
     <div class="hero-actions" style="margin-top:40px;">
-      <a href="app.html" class="btn btn-primary">Commencer mon parcours</a>
+      <a href="app.html" class="btn btn-primary" data-i18n="contact.check.cta">Commencer mon parcours</a>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="label">Une question</div>
-    <h2>Écrivez-nous avant de payer.</h2>
-    <p class="lead">Doute sur le format, question technique, cas particulier : ce formulaire part directement dans notre boîte mail. Réponse sous 48h ouvrées.</p>
+    <div class="label" data-i18n="contact.q.label">Une question</div>
+    <h2 data-i18n="contact.q.h2">Écrivez-nous avant de payer.</h2>
+    <p class="lead" data-i18n="contact.q.lead">Ce formulaire part directement dans notre boîte mail. Réponse sous 48h ouvrées.</p>
 
     <form class="form" id="contact-form" method="POST" action="https://formspree.io/f/REMPLACE_MOI">
       <div class="field">
-        <label for="nom">Nom & prénom</label>
+        <label for="nom" data-i18n="contact.f.name">Nom & prénom</label>
         <input type="text" id="nom" name="nom" required>
       </div>
-
       <div class="field">
-        <label for="email">Email</label>
+        <label for="email" data-i18n="contact.f.email">Email</label>
         <input type="email" id="email" name="email" required>
       </div>
-
       <div class="field">
-        <label for="question">Votre question</label>
+        <label for="question" data-i18n="contact.f.question">Votre question</label>
         <textarea id="question" name="question" required></textarea>
       </div>
-
       <input type="text" name="_gotcha" style="display:none">
-
-      <button type="submit" class="btn btn-primary">Envoyer</button>
+      <button type="submit" class="btn btn-primary" data-i18n="contact.f.send">Envoyer</button>
       <p id="form-status" style="margin-top:16px; font-family:'Space Mono', monospace; font-size:13px; color:var(--moss); display:none;"></p>
     </form>
   </div>
@@ -90,55 +94,48 @@
 
 <section class="section-tight">
   <div class="wrap">
-    <div class="label">Ou directement</div>
-    <p class="lead">Vous préférez écrire directement ? <a href="mailto:contact@strawberryproduction.fr" style="text-decoration:underline; color:var(--moss);">contact@strawberryproduction.fr</a></p>
+    <div class="label" data-i18n="contact.direct.label">Ou directement</div>
+    <p class="lead"><span data-i18n="contact.direct.p">Vous préférez écrire directement ?</span> <a href="mailto:contact@strawberryproduction.fr" style="text-decoration:underline; color:var(--moss);">contact@strawberryproduction.fr</a></p>
   </div>
 </section>
-
 <footer>
   <div class="wrap">
-    <div class="label">Strawberry Production</div>
-    <p class="quote">On ne te livre pas une marque. On fait naître l'entreprise avec toi.</p>
+    <div class="label" data-i18n="footer.house">Strawberry Production</div>
+    <p class="quote" data-i18n="footer.quote">On ne te livre pas une marque. On fait naître l'entreprise avec toi.</p>
     <div class="footer-grid">
-      <div class="sign">Brand Narrative Architecture — Paris</div>
+      <div class="sign" data-i18n="footer.sign">Architecture de marque — Paris</div>
       <ul class="footer-nav">
-        <li><a href="offre.html">L'offre</a></li>
-        <li><a href="parcours.html">Parcours</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
+        <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+        <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
   </div>
-</footer>
-
-<script src="assets/config.js"></script>
+</footer><script src="assets/config.js"></script>
+<script src="assets/i18n.js"></script>
 <script src="assets/nav.js"></script>
 <script>
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const lang = (localStorage.getItem('nova_lang')==='en')?'en':'fr';
     const btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true; btn.textContent = 'Envoi...';
+    btn.disabled = true; btn.textContent = DICT['contact.status.sending'][lang];
     try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
+      const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
       if (res.ok) {
         form.reset();
-        status.textContent = 'Message envoyé — réponse sous 48h ouvrées.';
+        status.textContent = DICT['contact.status.ok'][lang];
         status.style.display = 'block';
-        btn.textContent = 'Envoyé';
-      } else {
-        throw new Error('send failed');
-      }
+        btn.textContent = DICT['contact.status.sent'][lang];
+      } else { throw new Error('fail'); }
     } catch (err) {
-      status.textContent = 'Envoi impossible pour le moment — écrivez directement à ' + GENESE_CONFIG.CONTACT_EMAIL;
+      status.textContent = 'Erreur — ' + NOVA_CONFIG.CONTACT_EMAIL;
       status.style.color = 'var(--rust)';
       status.style.display = 'block';
-      btn.disabled = false; btn.textContent = 'Envoyer';
+      btn.disabled = false; btn.textContent = DICT['contact.f.send'][lang];
     }
   });
 </script>

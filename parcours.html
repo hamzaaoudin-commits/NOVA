@@ -3,101 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le parcours — GENÈSE, 5 étapes dans l'application | Strawberry Production</title>
-<meta name="description" content="Les 5 étapes de l'application GENÈSE, débloquées une à une, de la clarification de l'idée au plan de lancement à 90 jours — à votre rythme.">
+<title>Le parcours — NOVA, 5 étapes où le fondateur décide | Strawberry Production</title>
+<meta name="description" content="Les 5 étapes de l'application NOVA, débloquées une à une. À chaque étape, le fondateur a un rôle décisif à jouer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="Le parcours — GENÈSE, 5 étapes dans l'application">
-<meta property="og:description" content="Les 5 étapes de l'application GENÈSE, débloquées une à une, à votre rythme.">
+<meta property="og:title" content="Le parcours — NOVA, 5 étapes où le fondateur décide | Strawberry Production">
+<meta property="og:description" content="Les 5 étapes de l'application NOVA, débloquées une à une. À chaque étape, le fondateur a un rôle décisif à jouer.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-
-<nav class="nav">
+<body><nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">GEN<em>È</em>SE</a>
+    <a href="index.html" class="nav-logo">NOVA</a>
     <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="offre.html">L'offre</a></li>
-      <li><a href="parcours.html" class="active">Le parcours</a></li>
-      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
+      <li><a href="parcours.html" class="active" data-i18n="nav.journey">Le parcours</a></li>
+      <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
     </ul>
-    <a href="app.html" class="nav-cta">Commencer</a>
-  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-</div>
-<div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button><a href="index.html">Accueil</a><a href="offre.html">L'offre</a><a href="parcours.html" class="active">Le parcours</a><a href="tarifs.html">Tarifs</a><a href="app.html">Commencer</a></div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button data-lang="fr">FR</button><span class="sep">/</span><button data-lang="en">EN</button>
+      </div>
+      <a href="app.html" class="nav-cta" data-i18n="nav.start">Commencer</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav-mobile"><button class="nav-close" aria-label="Fermer">&times;</button>
+    <a href="index.html" data-i18n="nav.home">Accueil</a>
+    <a href="offre.html" data-i18n="nav.offer">L'offre</a>
+    <a href="parcours.html" data-i18n="nav.journey">Le parcours</a>
+    <a href="tarifs.html" data-i18n="nav.pricing">Tarif</a>
+    <a href="app.html" data-i18n="nav.start">Commencer</a>
+  </div>
 </nav>
-
 <header class="page-header">
   <div class="wrap">
-    <h1>Le <em>parcours</em></h1>
-    <p>Cinq étapes dans l'application. Chaque étape se débloque quand la précédente est complétée — rien n'est livré en silo.</p>
+    <h1 data-i18n="journey.h1">Le <em>parcours</em></h1>
+    <p data-i18n="journey.sub">Cinq étapes dans l'application. Chacune attend une décision du fondateur.</p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <div class="label">Format</div>
-    <h2>Une application, pas une commande.</h2>
-
-    <div class="path">
-      <div class="step">
-        <div class="step-dot">1</div>
-        <div class="step-body">
-          <h4>Clarification de l'idée</h4>
-          <p>Affiner l'offre, le business model, le public cible. C'est le bloc qui manque dans toutes les prestations de branding classiques : avant de raconter une histoire, s'assurer que l'histoire tient debout.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-dot">2</div>
-        <div class="step-body">
-          <h4>Validation du positionnement</h4>
-          <p>Définir ce que la marque dit, à qui, et pourquoi elle est différente. C'est le socle sur lequel tout le reste — nom, ton, site — viendra s'appuyer sans jamais être remis en question plus tard.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-dot">3</div>
-        <div class="step-body">
-          <h4>Nom et identité</h4>
-          <p>Naming, ton, univers visuel et verbal. L'idée prend enfin un visage et une voix cohérents avec le positionnement validé à l'étape précédente.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-dot">4</div>
-        <div class="step-body">
-          <h4>Site</h4>
-          <p>Vitrine web alignée avec l'identité définie. Le client dispose enfin d'un espace public, prêt à être partagé et à convertir.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-dot final">5</div>
-        <div class="step-body">
-          <h4>Plan de lancement à 90 jours</h4>
-          <p>Feuille de route concrète pour les trois premiers mois d'existence publique — pas une simple liste d'idées, mais un plan d'action séquencé.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="weeks">À VOTRE RYTHME — AUCUNE DATE LIMITE, PROGRESSION SAUVEGARDÉE</div>
+    <div class="label" data-i18n="journey.format.label">Format</div>
+    <h2 data-i18n="journey.format.h2">Une application, pas une commande passive.</h2>
+    <p class="lead" data-i18n="journey.format.lead">Vous construisez, étape par étape, la marque et l'entreprise.</p>
+    <div class="weeks" data-i18n="journey.weeks">À VOTRE RYTHME — AUCUNE DATE LIMITE, PROGRESSION SAUVEGARDÉE</div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="label">Implication</div>
-    <h2>C'est vous qui avancez — l'application structure, elle ne fait pas à votre place.</h2>
-    <p class="lead">Contrairement à un audit qu'on lit passivement, GENÈSE demande un vrai travail à chaque étape : vous répondez, vous formulez, vous décidez. L'application séquence et garde la cohérence entre les étapes — mais le fond vient de vous.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-dot">1</div>
+        <div class="step-body">
+          <div class="step-num-label" data-i18n="journey.s1.n">ÉTAPE 01</div>
+          <h4 data-i18n="journey.s1.t">Étape 1</h4>
+          <p data-i18n="journey.s1.p">Description de l'étape 1.</p>
+          <div class="step-role">
+            <span class="role-tag" data-i18n="journey.step.role">Le rôle du fondateur</span>
+            <p data-i18n="journey.s1.role">Votre rôle à l'étape 1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <div class="step-body">
+          <div class="step-num-label" data-i18n="journey.s2.n">ÉTAPE 02</div>
+          <h4 data-i18n="journey.s2.t">Étape 2</h4>
+          <p data-i18n="journey.s2.p">Description de l'étape 2.</p>
+          <div class="step-role">
+            <span class="role-tag" data-i18n="journey.step.role">Le rôle du fondateur</span>
+            <p data-i18n="journey.s2.role">Votre rôle à l'étape 2.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <div class="step-body">
+          <div class="step-num-label" data-i18n="journey.s3.n">ÉTAPE 03</div>
+          <h4 data-i18n="journey.s3.t">Étape 3</h4>
+          <p data-i18n="journey.s3.p">Description de l'étape 3.</p>
+          <div class="step-role">
+            <span class="role-tag" data-i18n="journey.step.role">Le rôle du fondateur</span>
+            <p data-i18n="journey.s3.role">Votre rôle à l'étape 3.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">4</div>
+        <div class="step-body">
+          <div class="step-num-label" data-i18n="journey.s4.n">ÉTAPE 04</div>
+          <h4 data-i18n="journey.s4.t">Étape 4</h4>
+          <p data-i18n="journey.s4.p">Description de l'étape 4.</p>
+          <div class="step-role">
+            <span class="role-tag" data-i18n="journey.step.role">Le rôle du fondateur</span>
+            <p data-i18n="journey.s4.role">Votre rôle à l'étape 4.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot final">5</div>
+        <div class="step-body">
+          <div class="step-num-label" data-i18n="journey.s5.n">ÉTAPE 05</div>
+          <h4 data-i18n="journey.s5.t">Étape 5</h4>
+          <p data-i18n="journey.s5.p">Description de l'étape 5.</p>
+          <div class="step-role">
+            <span class="role-tag" data-i18n="journey.step.role">Le rôle du fondateur</span>
+            <p data-i18n="journey.s5.role">Votre rôle à l'étape 5.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section>
+  <div class="wrap">
+    <div class="label" data-i18n="journey.invol.label">Implication</div>
+    <h2 data-i18n="journey.invol.h2">C'est vous qui avancez. L'application structure, elle ne fait pas à votre place.</h2>
+    <p class="lead" data-i18n="journey.invol.lead">NOVA demande un vrai travail à chaque étape.</p>
     <div class="friction-bar">
       <div class="friction-track"><div class="friction-fill"></div></div>
     </div>
     <div class="friction-labels">
-      <span>Lecture passive</span>
-      <span>Travail actif requis</span>
+      <span data-i18n="journey.invol.left">Lecture passive</span>
+      <span data-i18n="journey.invol.right">Travail actif du fondateur</span>
     </div>
   </div>
 </section>
@@ -105,29 +141,27 @@
 <section class="section-tight">
   <div class="wrap">
     <div class="hero-actions">
-      <a href="tarifs.html" class="btn btn-primary">Voir le tarif</a>
-      <a href="app.html" class="btn btn-ghost">Commencer mon parcours</a>
+      <a href="tarifs.html" class="btn btn-primary" data-i18n="journey.cta1">Voir le tarif</a>
+      <a href="app.html" class="btn btn-ghost" data-i18n="journey.cta2">Commencer mon parcours</a>
     </div>
   </div>
 </section>
-
 <footer>
   <div class="wrap">
-    <div class="label">Strawberry Production</div>
-    <p class="quote">Cinq étapes. Une application. Votre rythme.</p>
+    <div class="label" data-i18n="footer.house">Strawberry Production</div>
+    <p class="quote" data-i18n="journey.close.quote">Cinq étapes. Une application. Le fondateur, à chaque décision.</p>
     <div class="footer-grid">
-      <div class="sign">Brand Narrative Architecture — Paris</div>
+      <div class="sign" data-i18n="footer.sign">Architecture de marque — Paris</div>
       <ul class="footer-nav">
-        <li><a href="offre.html">L'offre</a></li>
-        <li><a href="parcours.html">Parcours</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="offre.html" data-i18n="nav.offer">L'offre</a></li>
+        <li><a href="parcours.html" data-i18n="nav.journey">Parcours</a></li>
+        <li><a href="tarifs.html" data-i18n="nav.pricing">Tarif</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </div>
   </div>
-</footer>
-
-<script src="assets/config.js"></script>
+</footer><script src="assets/config.js"></script>
+<script src="assets/i18n.js"></script>
 <script src="assets/nav.js"></script>
 </body>
 </html>
