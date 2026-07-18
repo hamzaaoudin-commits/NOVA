@@ -9,14 +9,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta name="theme-color" content="#f1ece1">
 <meta property="og:title" content="Votre parcours — NOVA">
 <meta property="og:description" content="Votre application NOVA : 5 étapes pour transformer votre idée en entreprise prête à être lancée.">
+<meta property="og:url" content="https://REMPLACE-PAR-TON-DOMAINE.fr/app">
+<meta property="og:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="NOVA — Strawberry Production">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body><nav class="nav">
+<body><a href="#main" class="skip-link">Aller au contenu</a>
+<nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">NOVA</a>
     <ul class="nav-links">
@@ -41,7 +52,7 @@
     <a href="app.html" data-i18n="nav.start">Commencer</a>
   </div>
 </nav>
-<div id="paywall-screen" class="app-shell">
+<div id="paywall-screen" class="app-shell" tabindex="-1"><span id="main"></span>
   <div class="wrap">
     <div class="paywall">
       <div class="label" style="justify-content:center;" data-i18n="app.pay.label">Accès à l'application</div>
@@ -82,77 +93,127 @@
   </div>
 </footer><script src="assets/config.js"></script>
 <script src="assets/i18n.js"></script>
+<script src="assets/app-steps.js"></script>
 <script src="assets/nav.js"></script>
 <script>
 const STORAGE_KEY = 'nova_progress';
 const UNLOCK_KEY = 'nova_unlocked';
 
+function $(id){ return document.getElementById(id); }
 function getProgress(){ try{ return JSON.parse(localStorage.getItem(STORAGE_KEY))||{}; }catch{ return {}; } }
-function saveProgress(d){ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
+function saveProgress(d){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); return true; }catch{ return false; } }
 function isUnlocked(){ return localStorage.getItem(UNLOCK_KEY)==='1'; }
 function lang(){ return (localStorage.getItem('nova_lang')==='en')?'en':'fr'; }
+function filled(v){ return !!(v && v.trim().length>0); }
 
 const params = new URLSearchParams(window.location.search);
-if (params.get('unlocked')==='1'){ localStorage.setItem(UNLOCK_KEY,'1'); const u=new URL(window.location); u.searchParams.delete('unlocked'); window.history.replaceState({}, '', u); }
+if (params.get('unlocked')==='1'){
+  localStorage.setItem(UNLOCK_KEY,'1');
+  const u=new URL(window.location); u.searchParams.delete('unlocked');
+  window.history.replaceState({}, '', u);
+}
 
 function renderApp(){
-  document.getElementById('nova-price').textContent = NOVA_CONFIG.PRICE_DISPLAY;
-  document.getElementById('pay-btn').href = NOVA_CONFIG.STRIPE_PAYMENT_LINK;
-  const paywall=document.getElementById('paywall-screen'), app=document.getElementById('app-screen');
-  if(!isUnlocked()){ paywall.style.display='block'; app.style.display='none'; return; }
+  const priceEl = $('nova-price');
+  const payBtn  = $('pay-btn');
+  if (priceEl && typeof NOVA_CONFIG !== 'undefined') priceEl.textContent = NOVA_CONFIG.PRICE_DISPLAY;
+  if (payBtn  && typeof NOVA_CONFIG !== 'undefined') payBtn.href = NOVA_CONFIG.STRIPE_PAYMENT_LINK;
+
+  const paywall = $('paywall-screen'), app = $('app-screen');
+  if (!paywall || !app) return;
+  if (!isUnlocked()){ paywall.style.display='block'; app.style.display='none'; return; }
   paywall.style.display='none'; app.style.display='block';
 
   const L = lang();
+  if (typeof NOVA_APP_STEPS === 'undefined' || typeof DICT === 'undefined') return;
   const STEPS = NOVA_APP_STEPS[L];
-  const progress=getProgress();
-  const container=document.getElementById('steps-container');
+  const progress = getProgress();
+  const container = $('steps-container');
+  if (!container) return;
+
+  // On mémorise quelles étapes étaient dépliées pour ne pas les refermer au re-render
+  const openState = {};
+  container.querySelectorAll('.app-step-head').forEach(h => {
+    openState[h.getAttribute('data-toggle')] = h.getAttribute('aria-expanded') === 'true';
+  });
+
   container.innerHTML='';
   STEPS.forEach((step,i)=>{
-    const prevDone = i===0 || !!(progress[STEPS[i-1].id] && progress[STEPS[i-1].id].trim().length>0);
-    const done = !!(progress[step.id] && progress[step.id].trim().length>0);
-    const locked = !prevDone && !done;
-    const statusTxt = done ? DICT['app.status.done'][L] : (locked ? DICT['app.status.locked'][L] : DICT['app.status.todo'][L]);
+    const prevDone = i===0 || filled(progress[STEPS[i-1].id]);
+    const done     = filled(progress[step.id]);
+    const locked   = !prevDone && !done;
+    const statusTxt = done ? DICT['app.status.done'][L]
+                    : (locked ? DICT['app.status.locked'][L] : DICT['app.status.todo'][L]);
+    // Par défaut : on ouvre la première étape non complétée et non verrouillée
+    const isOpen = openState[step.id] !== undefined
+      ? openState[step.id]
+      : (!locked && !done);
+
     const el=document.createElement('div');
     el.className='app-step'+(done?' done':'')+(locked?' locked':'');
     el.innerHTML = `
-      <div class="app-step-head" data-toggle="${step.id}">
-        <div class="app-step-num">${done?'\u2713':(i+1)}</div>
-        <h4>${step.title}</h4>
+      <div class="app-step-head" data-toggle="${step.id}" role="button" tabindex="${locked?-1:0}"
+           aria-expanded="${locked?'false':String(isOpen)}" aria-controls="body-${step.id}"
+           ${locked?'aria-disabled="true"':''}>
+        <div class="app-step-num" aria-hidden="true">${done?'\u2713':(i+1)}</div>
+        <h4 id="title-${step.id}">${step.title}</h4>
         <div class="app-step-status">${statusTxt}</div>
       </div>
-      <div class="app-step-body">
-        <p class="hint">${step.hint}</p>
-        <textarea data-field="${step.id}" placeholder="${step.placeholder}">${progress[step.id]||''}</textarea>
+      <div class="app-step-body" id="body-${step.id}" role="region" aria-labelledby="title-${step.id}"
+           style="display:${(locked||!isOpen)?'none':'block'};">
+        <p class="hint" id="hint-${step.id}">${step.hint}</p>
+        <label class="sr-only" for="field-${step.id}">${step.title}</label>
+        <textarea id="field-${step.id}" data-field="${step.id}" aria-describedby="hint-${step.id}"
+                  placeholder="${step.placeholder}">${progress[step.id]||''}</textarea>
         <div class="app-step-actions">
-          <button class="btn btn-primary" data-save="${step.id}">${DICT['app.save'][L]}</button>
-          <span class="app-save-note" data-note="${step.id}">${DICT['app.saved'][L]}</span>
+          <button type="button" class="btn btn-primary" data-save="${step.id}">${DICT['app.save'][L]}</button>
+          <span class="app-save-note" data-note="${step.id}" role="status" aria-live="polite"></span>
         </div>
       </div>`;
     container.appendChild(el);
   });
+
   container.querySelectorAll('[data-save]').forEach(btn=>{
     btn.addEventListener('click',()=>{
       const id=btn.getAttribute('data-save');
       const ta=container.querySelector(`textarea[data-field="${id}"]`);
-      const cur=getProgress(); cur[id]=ta.value; saveProgress(cur);
-      const note=container.querySelector(`[data-note="${id}"]`); note.classList.add('show'); setTimeout(()=>note.classList.remove('show'),2000);
+      if(!ta) return;
+      const cur=getProgress(); cur[id]=ta.value;
+      const ok=saveProgress(cur);
+      const note=container.querySelector(`[data-note="${id}"]`);
+      if(note){
+        note.textContent = ok ? DICT['app.saved'][lang()] : DICT['app.save.error'][lang()];
+        note.classList.add('show');
+        setTimeout(()=>note.classList.remove('show'),2000);
+      }
       renderApp();
     });
   });
+
+  const toggleStep = (head)=>{
+    const s=head.closest('.app-step');
+    if(!s || s.classList.contains('locked')) return;
+    const b=s.querySelector('.app-step-body');
+    if(!b) return;
+    const willOpen = b.style.display==='none';
+    b.style.display = willOpen ? 'block' : 'none';
+    head.setAttribute('aria-expanded', String(willOpen));
+  };
   container.querySelectorAll('[data-toggle]').forEach(head=>{
-    head.addEventListener('click',()=>{
-      const s=head.closest('.app-step'); if(s.classList.contains('locked')) return;
-      const b=s.querySelector('.app-step-body'); b.style.display = b.style.display==='none'?'block':'block';
+    head.addEventListener('click',()=>toggleStep(head));
+    head.addEventListener('keydown',(e)=>{
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleStep(head); }
     });
   });
-  const doneCount=STEPS.filter(s=>progress[s.id]&&progress[s.id].trim().length>0).length;
+
+  const doneCount=STEPS.filter(s=>filled(progress[s.id])).length;
   const pct=Math.round((doneCount/STEPS.length)*100);
-  document.getElementById('progress-fill').style.width=pct+'%';
-  document.getElementById('progress-text').textContent = doneCount+' / '+STEPS.length+' '+DICT['app.progress'][L];
-  document.getElementById('progress-pct').textContent=pct+'%';
+  const fill=$('progress-fill'), txt=$('progress-text'), pctEl=$('progress-pct');
+  if(fill) fill.style.width=pct+'%';
+  if(txt)  txt.textContent = doneCount+' / '+STEPS.length+' '+DICT['app.progress'][L];
+  if(pctEl) pctEl.textContent=pct+'%';
 }
 
-// re-render when language changes
 document.querySelectorAll('.lang-toggle button').forEach(b=>b.addEventListener('click',()=>setTimeout(renderApp,10)));
 document.addEventListener('DOMContentLoaded', renderApp);
 </script>

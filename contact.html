@@ -9,13 +9,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta name="theme-color" content="#f1ece1">
 <meta property="og:title" content="Contact — NOVA | Strawberry Production">
 <meta property="og:description" content="Une question avant de commencer votre parcours NOVA ? Écrivez-nous. Pour démarrer directement, rendez-vous sur l'application.">
+<link rel="canonical" href="https://REMPLACE-PAR-TON-DOMAINE.fr/contact">
+<link rel="alternate" hreflang="fr" href="https://REMPLACE-PAR-TON-DOMAINE.fr/contact">
+<link rel="alternate" hreflang="en" href="https://REMPLACE-PAR-TON-DOMAINE.fr/contact?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://REMPLACE-PAR-TON-DOMAINE.fr/contact">
+<meta property="og:url" content="https://REMPLACE-PAR-TON-DOMAINE.fr/contact">
+<meta property="og:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="NOVA — Strawberry Production">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body><nav class="nav">
+<body><a href="#main" class="skip-link">Aller au contenu</a>
+<nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">NOVA</a>
     <ul class="nav-links">
@@ -40,10 +55,10 @@
     <a href="app.html" data-i18n="nav.start">Commencer</a>
   </div>
 </nav>
-<header class="page-header">
+<header class="page-header" id="main">
   <div class="wrap">
     <h1 data-i18n="contact.h1">Une <em>question</em><br>avant de commencer ?</h1>
-    <p data-i18n="contact.sub">NOVA s'achète et se démarre directement dans l'application.</p>
+    <p data-i18n="contact.sub">NOVA s'achète et se démarre directement dans l'application. Ce formulaire sert uniquement si vous voulez échanger avant.</p>
   </div>
 </header>
 
@@ -53,11 +68,11 @@
     <div class="target">
       <div class="target-card no">
         <div class="tag" data-i18n="contact.check.no.tag">Ce n'est pas pour vous si</div>
-        <p data-i18n="contact.check.no.p">Votre entreprise est déjà lancée et tourne.</p>
+        <p data-i18n="contact.check.no.p">Votre entreprise est déjà lancée et tourne — c'est l'offre Strawberry classique qu'il vous faut, pas NOVA.</p>
       </div>
       <div class="target-card yes">
         <div class="tag" data-i18n="contact.check.yes.tag">C'est pour vous si</div>
-        <p data-i18n="contact.check.yes.p">Vous avez une idée claire et voulez avancer vous-même, étape par étape.</p>
+        <p data-i18n="contact.check.yes.p">Vous avez une idée claire, rien n'est encore lancé, et vous voulez avancer vous-même, étape par étape, dans un outil qui structure le travail.</p>
       </div>
     </div>
     <div class="hero-actions" style="margin-top:40px;">
@@ -70,7 +85,7 @@
   <div class="wrap">
     <div class="label" data-i18n="contact.q.label">Une question</div>
     <h2 data-i18n="contact.q.h2">Écrivez-nous avant de payer.</h2>
-    <p class="lead" data-i18n="contact.q.lead">Ce formulaire part directement dans notre boîte mail. Réponse sous 48h ouvrées.</p>
+    <p class="lead" data-i18n="contact.q.lead">Doute sur le format, question technique, cas particulier : ce formulaire part directement dans notre boîte mail. Réponse sous 48h ouvrées.</p>
 
     <form class="form" id="contact-form" method="POST" action="https://formspree.io/f/REMPLACE_MOI">
       <div class="field">
@@ -87,7 +102,7 @@
       </div>
       <input type="text" name="_gotcha" style="display:none">
       <button type="submit" class="btn btn-primary" data-i18n="contact.f.send">Envoyer</button>
-      <p id="form-status" style="margin-top:16px; font-family:'Space Mono', monospace; font-size:13px; color:var(--moss); display:none;"></p>
+      <p id="form-status" role="status" aria-live="polite" style="margin-top:16px; font-family:'Space Mono', monospace; font-size:13px; color:var(--moss); display:none;"></p>
     </form>
   </div>
 </section>
@@ -118,7 +133,7 @@
 <script>
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
-  form.addEventListener('submit', async (e) => {
+  if (form && status) form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const lang = (localStorage.getItem('nova_lang')==='en')?'en':'fr';
     const btn = form.querySelector('button[type="submit"]');
@@ -132,7 +147,8 @@
         btn.textContent = DICT['contact.status.sent'][lang];
       } else { throw new Error('fail'); }
     } catch (err) {
-      status.textContent = 'Erreur — ' + NOVA_CONFIG.CONTACT_EMAIL;
+      const mail = (typeof NOVA_CONFIG !== 'undefined') ? NOVA_CONFIG.CONTACT_EMAIL : '';
+      status.textContent = DICT['contact.status.error'][lang] + ' ' + mail;
       status.style.color = 'var(--rust)';
       status.style.display = 'block';
       btn.disabled = false; btn.textContent = DICT['contact.f.send'][lang];

@@ -9,13 +9,36 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,440&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<meta name="theme-color" content="#f1ece1">
 <meta property="og:title" content="Tarif — NOVA, paiement unique 999€ | Strawberry Production">
 <meta property="og:description" content="NOVA : un paiement unique de 999€ pour un accès complet à l'application — 5 étapes, de l'idée à l'entreprise lancée.">
+<link rel="canonical" href="https://REMPLACE-PAR-TON-DOMAINE.fr/tarifs">
+<link rel="alternate" hreflang="fr" href="https://REMPLACE-PAR-TON-DOMAINE.fr/tarifs">
+<link rel="alternate" hreflang="en" href="https://REMPLACE-PAR-TON-DOMAINE.fr/tarifs?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://REMPLACE-PAR-TON-DOMAINE.fr/tarifs">
+<meta property="og:url" content="https://REMPLACE-PAR-TON-DOMAINE.fr/tarifs">
+<meta property="og:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="NOVA — Strawberry Production">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png">
 <link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"NOVA",
+ "brand":{"@type":"Brand","name":"Strawberry Production"},
+ "description":"Application pas-à-pas en 5 étapes pour transformer une idée en entreprise prête à être lancée.",
+ "url":"https://REMPLACE-PAR-TON-DOMAINE.fr/","image":"https://REMPLACE-PAR-TON-DOMAINE.fr/assets/og-image.png",
+ "offers":{"@type":"Offer","price":"999","priceCurrency":"EUR",
+   "availability":"https://schema.org/InStock","url":"https://REMPLACE-PAR-TON-DOMAINE.fr/tarifs"}}
+</script>
 </head>
-<body><nav class="nav">
+<body><a href="#main" class="skip-link">Aller au contenu</a>
+<nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">NOVA</a>
     <ul class="nav-links">
@@ -40,7 +63,7 @@
     <a href="app.html" data-i18n="nav.start">Commencer</a>
   </div>
 </nav>
-<header class="page-header">
+<header class="page-header" id="main">
   <div class="wrap">
     <h1 data-i18n="pricing.h1">Tarif & <em>valeur</em></h1>
     <p data-i18n="pricing.sub">Un paiement unique. Un accès complet et sans date limite à l'application.</p>
@@ -54,17 +77,17 @@
 
     <div class="price-block">
       <div class="price"><span id="nova-price">999 €</span></div>
-      <div class="price-note" data-i18n="pricing.note">Paiement unique — pas d'abonnement.</div>
+      <div class="price-note" data-i18n="pricing.note">Paiement unique — pas d'abonnement. L'application reste accessible tant que vous progressez, sans date limite.</div>
     </div>
 
     <div class="why-grid">
       <div>
         <div class="n" data-i18n="pricing.r1">RAISON 01</div>
-        <p data-i18n="pricing.r1.p">Remplace un stratège, un copywriter, un designer et un développeur.</p>
+        <p data-i18n="pricing.r1.p">Remplace le travail d'un stratège, d'un copywriter, d'un designer et d'un développeur — structuré en un seul outil cohérent.</p>
       </div>
       <div>
         <div class="n" data-i18n="pricing.r2">RAISON 02</div>
-        <p data-i18n="pricing.r2.p">Un seul paiement couvre les 5 étapes intégralement.</p>
+        <p data-i18n="pricing.r2.p">Un seul paiement couvre les 5 étapes intégralement, sans facturation additionnelle en cours de route.</p>
       </div>
     </div>
   </div>
@@ -73,7 +96,7 @@
 <section>
   <div class="wrap">
     <div class="label" data-i18n="pricing.incl.label">Ce qui est inclus</div>
-    <p class="quote" data-i18n="pricing.incl.quote">Un paiement unique. Cinq étapes débloquées progressivement. Aucun frais caché.</p>
+    <p class="quote" data-i18n="pricing.incl.quote">Un paiement unique. Cinq étapes débloquées progressivement. Aucun frais caché, aucun abonnement.</p>
   </div>
 </section>
 
@@ -103,7 +126,8 @@
 <script src="assets/i18n.js"></script>
 <script src="assets/nav.js"></script>
 <script>
-  document.getElementById('nova-price').textContent = NOVA_CONFIG.PRICE_DISPLAY;
+  const priceEl = document.getElementById('nova-price');
+  if (priceEl && typeof NOVA_CONFIG !== 'undefined') priceEl.textContent = NOVA_CONFIG.PRICE_DISPLAY;
 </script>
 </body>
 </html>
